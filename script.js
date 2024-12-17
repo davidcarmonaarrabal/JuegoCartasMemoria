@@ -14,7 +14,7 @@ timer.style.display = "none";
 
 startBtn.addEventListener("click", startGame);
 
-/*Start game function*/ 
+/*Start game function.*/ 
 function startGame() {
     startGameStyles();
     startTimer();
@@ -23,7 +23,7 @@ function startGame() {
     displayCardsTemporarily();
 }
 
-/*This function initializes all the game elements, hidding the menu ones. */
+/*This function initializes all the game elements, hidding the menu ones.*/
 function startGameStyles() {
     totalPairs = parseInt(pairsSelect.value);
     menu.style.display = "none";
@@ -34,7 +34,7 @@ function startGameStyles() {
 }
 
 /*This function creates all the cards based in the amount of pairs we
-gave to it. */
+gave to it.*/
 function createCards() {
     cards = [];
     /*Loop of card creation */
@@ -43,15 +43,15 @@ function createCards() {
     }
 }
 
-/*This function shuffles the cards into the game board. */
+/*This function shuffles the cards into the game board.*/
 function shuffleCards() {
-    /*The "-0.5 makes the shuffle be ordenated in a range of -0.5 and 0.5." */
+    /*The "-0.5 makes the shuffle be ordenated in a range of -0.5 and 0.5.".*/
     cards.sort(() => Math.random() - 0.5);
     gameBoard.innerHTML = "";
     /*Now we create the card in the HTML, giving it an image based in the 
     number of the card, inside a div and giving it a class named "card" to
     recieve CSS properties.
-    We also add an EventListener to every card to make them interactive. */
+    We also add an EventListener to every card to make them interactive.*/
     cards.forEach((value) => {
         const card = document.createElement("div");
         card.classList.add("card");
@@ -63,7 +63,7 @@ function shuffleCards() {
 }
 
 /*This function has the job of showing the cards at the start of the game
-during 2 seconds. */
+during 2 seconds.*/
 function displayCardsTemporarily() {
     const allCards = document.querySelectorAll(".card");
     /*We flip every card. */
@@ -72,7 +72,7 @@ function displayCardsTemporarily() {
         card.style.backgroundImage = `url('${card.dataset.image}')`; 
     });
     /*After 2 seconds we unflip every card and put on it the image of the
-    back side. */
+    back side.*/
     setTimeout(() => {
         allCards.forEach((card) => {
             card.classList.remove("flipped");
@@ -81,7 +81,7 @@ function displayCardsTemporarily() {
     }, 2000);
 }
 
-/*This function makes the card flip when clicked. */
+/*This function makes the card flip when clicked.*/
 function flipCard() {
     /*This if checks if the card clicked is already flipped to do nothing if
     clicked again. 
@@ -96,17 +96,17 @@ function flipCard() {
     flippedCards.push(this);
 
     /*If there are 2 flipped cards on the board, it takes 0.5 seconds
-    to unflip them if they are not a pair. */
+    to unflip them if they are not a pair.*/
     if (flippedCards.length === 2) {
         setTimeout(checkMatch, 500);
     }
 }
 
-/*This function checks if the card are a pair. */
+/*This function checks if the card are a pair.*/
 function checkMatch() {
     const [card1, card2] = flippedCards;
 
-    /*If there is a pair, the cards now have the class "matched". */
+    /*If there is a pair, the cards now have the class "matched".*/
     if (card1.dataset.value === card2.dataset.value) {
         card1.classList.add("matched");
         card2.classList.add("matched");
@@ -122,7 +122,7 @@ function checkMatch() {
     flippedCards = [];
 }
 
-/*Time of game. */
+/*Time of game.*/
 function startTimer() {
     time = 0;
     timer.textContent = `Tiempo: ${time} segundos`;
@@ -141,7 +141,7 @@ function endGame() {
     resetGame();
 }
 
-/*Home menu appears again, every other thing dissapear. */
+/*Home menu appears again, every other thing dissapear.*/
 function resetGame() {
     homeMenuStyles();
 }
