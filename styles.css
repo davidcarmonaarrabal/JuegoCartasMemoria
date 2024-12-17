@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(img/background.png);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    color: black;
+}
+
+#images{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+#selector{
+    display: flex;
+    flex-direction: row;
+}
+
+#selector select{
+    border-radius: 5px;
+    width: 60px;
+    height: 30px;
+    margin-top: 70px;
+}
+
+#menu {
+    text-align: center;
+}
+
+#logo {
+    width: 700px;
+    margin-bottom: 20px;
+}
+
+#subname {
+    width: 300px;
+}
+
+#pairsNumber {
+    margin: 10px 0;
+    padding: 5px;
+}
+
+#btnContainer{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    width: 500px;
+}
+
+#startBtn {
+    padding: 10px 20px;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    justify-items: center;
+    align-items: center;
+}
+
+#startBtn img{
+    width: 90%;
+    transition: width 0.3s ease;
+}
+
+#startBtn img:hover{
+    width: 100%;
+}
+
+#gameBoard {
+    display: none; 
+    display: grid;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    width: 100px;             
+    height: 150px;           
+    background-image: url('img/Back.png'); 
+    background-size: cover; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    transform-style: preserve-3d;  
+    transition: transform 0.6s;
+}
+
+.card.flipped {
+    transform: rotateY(180deg); 
+}
+
+
+.card .card-content {
+    backface-visibility: hidden; 
+    transform: rotateY(180deg);  
+}
+
+
+.card.matched {
+    box-shadow: 0 0 15px 5px rgba(255, 215, 0, 0.8);
+    background-color: #d4edda; 
+    transition: box-shadow 0.3s ease-in-out; 
+}
+
+/* Cronómetro */
+#timer {
+    margin: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px;
+}
