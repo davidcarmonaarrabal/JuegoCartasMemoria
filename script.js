@@ -136,10 +136,13 @@ function startTimer() {
 gives user an alert advising that they finished the game and on
 how much time they did.*/
 function endGame() {
-    clearInterval(interval);
-    alert(`¡Felicidades! Has terminado en ${time} segundos.`);
-    resetGame();
+    clearInterval(interval); 
+    setTimeout(() => {
+        alert(`¡Felicidades! Has terminado en ${time} segundos.`);
+        resetGame();
+    }, 1500);
 }
+
 
 /*Home menu appears again, every other thing dissapear. */
 function resetGame() {
