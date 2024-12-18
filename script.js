@@ -62,9 +62,49 @@ function shuffleCards() {
     });
 }
 
+function calculateDisplayCardsTemporarily() {
+    console.log('Número de parejas:' +pairsSelect.value);
+    var miliseconds = 0;
+    switch(pairsSelect.value){
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+            miliseconds = 2000;
+            break;
+        case '6':
+        case '7':
+        case '8':
+            miliseconds = 3000;
+            break;
+        case '9':
+        case '10':
+        case '11':
+        case '12':
+        case '13':
+            miliseconds = 4000;
+            break;
+        case '14':
+        case '15':
+        case '16':
+        case '17':
+            miliseconds = 5000;
+            break;
+        case '18':
+        case '19':
+        case '20':
+            miliseconds = 6000;
+            break;
+        default:
+            miliseconds = 2000;
+    }
+    return miliseconds;
+}
+
 /*This function has the job of showing the cards at the start of the game
 during 2 seconds.*/
 function displayCardsTemporarily() {
+    var miliseconds = calculateDisplayCardsTemporarily();
     const allCards = document.querySelectorAll(".card");
     /*We flip every card. */
     allCards.forEach((card) => {
@@ -78,7 +118,7 @@ function displayCardsTemporarily() {
             card.classList.remove("flipped");
             card.style.backgroundImage = `url('img/Back.png')`;
         });
-    }, 2000);
+    }, miliseconds);
 }
 
 /*This function makes the card flip when clicked.*/
@@ -140,7 +180,7 @@ function endGame() {
     setTimeout(() => {
         alert(`¡Felicidades! Has terminado en ${time} segundos.`);
         resetGame();
-    }, 1500);
+    }, 1000);
 }
 
 function resetGame() {
