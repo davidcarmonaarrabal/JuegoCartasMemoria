@@ -29,7 +29,7 @@ function startGameStyles() {
     menu.style.display = "none";
     gameBoard.style.display = "grid";
     /*Only 2 cards of every number. */
-    gameBoard.style.gridTemplateColumns = `repeat(${Math.ceil(Math.sqrt(totalPairs * 2))}, 80px)`;
+    gameBoard.style.gridTemplateColumns = `repeat(${Math.ceil(Math.sqrt(totalPairs * 2)) + 3}, 80px)`;
     timer.style.display = "block";
 }
 
