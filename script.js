@@ -143,12 +143,6 @@ function endGame() {
     }, 1500);
 }
 
-<<<<<<< HEAD
-
-/*Home menu appears again, every other thing dissapear. */
-=======
-/*Home menu appears again, every other thing dissapear.*/
->>>>>>> 949bdaf4313bb7a4b92fcfcd101de7d26485b692
 function resetGame() {
     homeMenuStyles();
 }
