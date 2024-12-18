@@ -62,6 +62,7 @@ function shuffleCards() {
     });
 }
 
+/*This function calculates the time that the cards are displayed at the start.*/
 function calculateDisplayCardsTemporarily() {
     console.log('Número de parejas:' +pairsSelect.value);
     var miliseconds = 0;
