@@ -59,7 +59,8 @@ body {
     align-items: center;
     justify-items: center;
     justify-content: center;
-    width: 500px;
+    width: 100%;
+    min-height: 400px;
 }
 
 #startBtn {
@@ -75,12 +76,12 @@ body {
 }
 
 #startBtn img{
-    width: 90%;
+    width: 500px;
     transition: width 0.3s ease;
 }
 
 #startBtn img:hover{
-    width: 100%;
+    width: 525px;
 }
 
 #gameBoard {
